@@ -1,34 +1,101 @@
 @charset "UTF-8";
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    height: 100dvh;
+	height: 100dvh;
+	background-image: url(./img/background.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 main {
-    height: 100dvh;
-    display: flex;
-    justify-content: center;
+	height: 100dvh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	& .container {
+		margin: 10px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		border: 2px solid #38498b;
+		background-color: rgba(255, 255, 255, 0.223);
+		padding: 10px;
+		border-radius: 20px;
+		width: 40%;
+		height: 70%;
+
+		& h1 {
+			font-family: 'Lilita One', sans-serif;
+			font-size: 2.8em;
+			font-weight: 400;
+			font-style: normal;
+			color: white;
+			letter-spacing: 2px;
+			text-shadow: 1px 1px 1px #38498b, 1px -1px 1px #38498b, -1px 1px 1px #38498b, -1px -1px 1px #38498b;
+		}
+	}
+
+	& form {
+		display: flex;
+		flex-direction: column;
+		margin: 15px;
+		gap: 20px;
+		width: 80%;
+	}
 }
 
-.container {
-    width: 80%;
-    height: 80%;
+& .logo {
+	width: 17vh;
 }
 
-.logo {
-    margin: 20px;
-    padding: 20px;
-    
-    & img {
-        height: 30%;
-        width: 30%;
-    }
+& .logo img {
+	width: 100%;
 }
 
+.input {
+	border: 3px solid #38498b;
+	background-color: #7ab0e081;
+	width: 100%;
+	border-radius: 35px;
+	padding: 20px;
+
+	& img {
+		width: 30px;
+		margin-right: 10px;
+	}
+
+	& label {
+		font-size: 1.8em;
+		font-weight: 600;
+		position: relative;
+		bottom: 4px;
+	}
+
+	& input {
+		background-color: transparent;
+		border-style: none;
+	}
+}
+
+.send_form {
+	display: flex;
+	justify-content: space-between;
+
+	& input {
+		width: 25%;
+		height: 40px;
+		border-radius: 10px;
+		border: 1px solid #38498b;
+	}
+}
