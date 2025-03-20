@@ -22,6 +22,14 @@ main {
 	align-items: center;
 	flex-direction: column;
 
+	& .logo {
+		width: 17vh;
+	}
+
+	& .logo img {
+		width: 100%;
+	}
+
 	& .container {
 		margin: 10px;
 		display: flex;
@@ -31,71 +39,135 @@ main {
 		border: 2px solid #38498b;
 		background-color: rgba(255, 255, 255, 0.223);
 		padding: 10px;
-		border-radius: 20px;
+		border-radius: 30px;
 		width: 40%;
-		height: 70%;
+		height: 80vh;
+		gap: 30px;
 
 		& h1 {
 			font-family: 'Lilita One', sans-serif;
-			font-size: 2.8em;
+			font-size: 3.5em;
 			font-weight: 400;
 			font-style: normal;
 			color: white;
 			letter-spacing: 2px;
 			text-shadow: 1px 1px 1px #38498b, 1px -1px 1px #38498b, -1px 1px 1px #38498b, -1px -1px 1px #38498b;
 		}
-	}
 
-	& form {
-		display: flex;
-		flex-direction: column;
-		margin: 15px;
-		gap: 20px;
-		width: 80%;
+		.env_bottons {
+			display: flex;
+			justify-content: space-evenly;
+			height: 70px;
+
+			& button {
+				width: 35%;
+				border-radius: 35px;
+				border: none;
+				font-weight: bold;
+				font-size: 1.8em;
+				border: 1px solid #38498b;
+				background-color: #377ebcd1;
+			}
+		}
+
+		.sub_checkbox {
+			display: flex;
+			justify-content: space-evenly;
+			height: 35px;
+
+			& input {
+				appearance: none;
+				width: 40px;
+				height: 40px;
+				border: 4px solid black;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: all 0.1s ease-in-out;
+			}
+
+			& label {
+				font-size: 1.8em;
+				font-weight: bold;
+			}
+
+			& div {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+			}
+		}
+
+		& form {
+			display: flex;
+			flex-direction: column;
+			margin: 15px;
+			gap: 30px;
+			width: 80%;
+
+			.input {
+				border: 3px solid #38498b;
+				background-color: #7ab0e081;
+				width: 100%;
+				border-radius: 45px;
+				padding: 20px;
+				position: relative;
+
+				& img {
+					width: 42px;
+					margin-right: 20px;
+					position: relative;
+					top: 6px;
+					pointer-events: none;
+				}
+
+				& label {
+					font-size: 1.8em;
+					font-weight: 600;
+					color: #55667b;
+					left: 7.8vh;
+					top: 34%;
+					transition: 0.3s ease-in-out;
+					pointer-events: none;
+					position: absolute;
+				}
+
+				& input {
+					font-size: 1.8em;
+					background-color: transparent;
+					width: 85%;
+					height: 45px;
+					border-radius: 10px;
+					border: none;
+					outline: none;
+				}
+			}
+		}
 	}
 }
 
-& .logo {
-	width: 17vh;
+.input input:focus ~ label,
+.input input:not(:placeholder-shown) ~ label {
+	font-size: 1.5em !important;
+	transform: translateY(-90%);
+	transition: all 0.3s ease-in-out;
 }
 
-& .logo img {
-	width: 100%;
+button:hover {
+	cursor: pointer;
+	background-color: #447198e9 !important;
+	border: 2px solid #38498b !important;
 }
 
-.input {
-	border: 3px solid #38498b;
-	background-color: #7ab0e081;
-	width: 100%;
-	border-radius: 35px;
-	padding: 20px;
-
-	& img {
-		width: 30px;
-		margin-right: 10px;
-	}
-
-	& label {
-		font-size: 1.8em;
-		font-weight: 600;
-		position: relative;
-		bottom: 4px;
-	}
-
-	& input {
-		background-color: transparent;
-		border-style: none;
-	}
+input[type='checkbox']:checked {
+	transform: scale(0.9);
 }
 
-.send_form {
+input[type='checkbox']:checked::before {
+	content: '✔';
+	font-size: 24px;
+	font-weight: bold;
 	display: flex;
-	justify-content: space-between;
-
-	& input {
-		width: 25%;
-		height: 40px;
-		border-radius: 10px;
-		border: 1px solid #38498b;
-	}
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }

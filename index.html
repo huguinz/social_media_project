@@ -19,35 +19,51 @@
         </div>
         <div class="container">
             <h1>SIGN UP</h1>
-            <form action="#" method="post">
+            <form action="#" method="post" id="signup-form">
                 <div class="input" id="input_email">
                     <img src="./img/mail.png" alt="email_icon">
+                    <input type="email" id="email" name="email" placeholder=" " required>
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="input" id="input_username">
                     <img src="./img/user.png" alt="user_icon">
+                    <input type="text" id="username" name="username" placeholder=" " required>
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
                 </div>
                 <div class="input" id="input_password">
                     <img src="./img/padlock.png" alt="lock_icon">
+                    <input type="password" id="password" name="password" placeholder=" " required>
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
                 </div>
                 <div class="input" id="confirm_password">
                     <img src="./img/padlock.png" alt="lock_icon">
+                    <input type="password" id="passwordC" name="confirm_password" placeholder=" " required>
                     <label for="confirm">Confirm Password</label>
-                    <input type="password" id="passwordC" name="confirm_password">
                 </div>
 
-                <div class="send_form">
-                    <button type="submit" class="btn-submit">
-                        <i class="icon"></i> Cadastrar
+                <div class="sub_checkbox">
+                    <div>
+                        <input type="checkbox" id="free-sub" name="Free Subscription">
+                        <label for="Free Subscription">Free plan</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="free-sub" name="Premium Subscription">
+                        <label for="Premium Subscription">Premium plan</label>
+                    </div>
+                </div>
+
+                <div class="env_bottons">
+                    <button id="btn-back" onclick="window.location.href='#'" style="color: white;">
+                        Back login
+                    </button>
+                    <button type="submit" id="btn-submit">
+                        Sign Up
                     </button>
                 </div>
             </form>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
