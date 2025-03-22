@@ -19,25 +19,30 @@
         </div>
         <div class="container">
             <h1>SIGN UP</h1>
+            <div id="error_register_message"></div>
             <form action="#" method="post" id="signup-form">
                 <div class="input" id="input_email">
-                    <img src="./img/mail.png" alt="email_icon">
+                    <img src="./img/mail.png" alt="email_icon" class="icons">
                     <input type="email" id="email" name="email" placeholder=" " required>
                     <label for="email">E-mail</label>
                 </div>
                 <div class="input" id="input_username">
-                    <img src="./img/user.png" alt="user_icon">
+                    <img src="./img/user.png" alt="user_icon" class="icons">
                     <input type="text" id="username" name="username" placeholder=" " required>
                     <label for="username">Username</label>
                 </div>
                 <div class="input" id="input_password">
-                    <img src="./img/padlock.png" alt="lock_icon">
+                    <img src="./img/padlock.png" alt="lock_icon" class="icons">
                     <input type="password" id="password" name="password" placeholder=" " required>
+                    <img src="./img/invisible.png" alt="password_visibility" title="Show/Hide Password" class="password_icon"
+                        id="password_visibility">
                     <label for="password">Password</label>
                 </div>
                 <div class="input" id="confirm_password">
-                    <img src="./img/padlock.png" alt="lock_icon">
+                    <img src="./img/padlock.png" alt="lock_icon" class="icons">
                     <input type="password" id="passwordC" name="confirm_password" placeholder=" " required>
+                    <img src="./img/invisible.png" alt="password_visibility" title="Show/Hide Password" class="password_icon"
+                        id="passwordC_visibility">
                     <label for="confirm">Confirm Password</label>
                 </div>
 
@@ -63,7 +68,6 @@
             </form>
         </div>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>

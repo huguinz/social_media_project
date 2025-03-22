@@ -41,7 +41,7 @@ main {
 		padding: 10px;
 		border-radius: 30px;
 		width: 40%;
-		height: 80vh;
+		height: 83vh;
 		gap: 30px;
 
 		& h1 {
@@ -52,6 +52,19 @@ main {
 			color: white;
 			letter-spacing: 2px;
 			text-shadow: 1px 1px 1px #38498b, 1px -1px 1px #38498b, -1px 1px 1px #38498b, -1px -1px 1px #38498b;
+		}
+
+		& #error_register_message {
+			width: 78%;
+			& p {
+				font-size: 1.5em;
+				font-weight: bold;
+				font-style: italic;
+				color: #df1e1e;
+				position: relative;
+				top: 30px;
+				left: 15px;
+			}
 		}
 
 		.env_bottons {
@@ -112,12 +125,20 @@ main {
 				padding: 20px;
 				position: relative;
 
-				& img {
+				& .icons {
 					width: 42px;
 					margin-right: 20px;
 					position: relative;
 					top: 6px;
 					pointer-events: none;
+				}
+
+				& .password_icon {
+					position: absolute;
+					right: 30px;
+					top: 30px;
+					width: 6%;
+					cursor: pointer;
 				}
 
 				& label {
