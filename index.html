@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <main>
         <div class="logo">
             <img src="./img/logo-loop.png" alt="Loop Logo">
@@ -20,7 +19,7 @@
         <div class="container">
             <h1>SIGN UP</h1>
             <div id="error_register_message"></div>
-            <form action="#" method="post" id="signup-form">
+            <form method="post" id="signup-form">
                 <div class="input" id="input_email">
                     <img src="./img/mail.png" alt="email_icon" class="icons">
                     <input type="email" id="email" name="email" placeholder=" " required>
@@ -48,11 +47,11 @@
 
                 <div class="sub_checkbox">
                     <div>
-                        <input type="checkbox" id="free-sub" name="Free Subscription">
+                        <input type="radio" id="free-sub" name="subscription" value="0" checked>
                         <label for="Free Subscription">Free plan</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="free-sub" name="Premium Subscription">
+                        <input type="radio" id="premium-sub" name="subscription">
                         <label for="Premium Subscription">Premium plan</label>
                     </div>
                 </div>

@@ -96,6 +96,7 @@ main {
 				border-radius: 5px;
 				cursor: pointer;
 				transition: all 0.1s ease-in-out;
+				position: relative;
 			}
 
 			& label {
@@ -179,16 +180,11 @@ button:hover {
 	border: 2px solid #38498b !important;
 }
 
-input[type='checkbox']:checked {
-	transform: scale(0.9);
-}
-
-input[type='checkbox']:checked::before {
+input[type='radio']:checked::before {
 	content: '✔';
-	font-size: 24px;
-	font-weight: bold;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
+	font-size: 2em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
