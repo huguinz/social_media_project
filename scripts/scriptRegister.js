@@ -49,8 +49,9 @@ const postRegisterUser = async () => {
 	})
 
 	if (response.ok) {
+		console.log(response)
 		alert('user registered successfully!!')
-		window.location.href = 'login.html'
+		window.location.href = '#'
 	} else {
 		alert('register error!!')
 	}
@@ -63,10 +64,10 @@ const passwordVisibility = () => {
 
 	if (inputPassword.type == 'password') {
 		inputPassword.type = 'text'
-		iconPasswordVisibility.src = './img/visible.png'
+		iconPasswordVisibility.src = '/src/img/visible.png'
 	} else {
 		inputPassword.type = 'password'
-		iconPasswordVisibility.src = './img/invisible.png'
+		iconPasswordVisibility.src = '/src/img/invisible.png'
 	}
 }
 
@@ -75,10 +76,10 @@ const passwordConfirmVisibility = () => {
 
 	if (inputConfirmPassword.type == 'password') {
 		inputConfirmPassword.type = 'text'
-		iconConfirmPasswordVisibility.src = './img/visible.png'
+		iconConfirmPasswordVisibility.src = '/src/img/visible.png'
 	} else {
 		inputConfirmPassword.type = 'password'
-		iconConfirmPasswordVisibility.src = './img/invisible.png'
+		iconConfirmPasswordVisibility.src = '/src/img/invisible.png'
 	}
 }
 

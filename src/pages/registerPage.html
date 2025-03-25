@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/registerPage.css">
+    <title>Loop - Sign Up!</title>
+</head>
+
+<body>
+    <main>
+        <div class="logo">
+            <img src="../img/logo-loop.png" alt="Loop Logo">
+        </div>
+        <div class="container">
+            <h1>SIGN UP</h1>
+            <div id="error_register_message"></div>
+            <form method="post" id="signup-form">
+                <div class="input" id="input_email">
+                    <img src="../img/mail.png" alt="email_icon" class="icons">
+                    <input type="email" id="email" name="email" placeholder=" " required>
+                    <label for="email">E-mail</label>
+                </div>
+                <div class="input" id="input_username">
+                    <img src="../img/user.png" alt="user_icon" class="icons">
+                    <input type="text" id="username" name="username" placeholder=" " required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input" id="input_password">
+                    <img src="../img/padlock.png" alt="lock_icon" class="icons">
+                    <input type="password" id="password" name="password" placeholder=" " required>
+                    <img src="../img/invisible.png" alt="password_visibility" title="Show/Hide Password" class="password_icon"
+                        id="password_visibility">
+                    <label for="password">Password</label>
+                </div>
+                <div class="input" id="confirm_password">
+                    <img src="../img/padlock.png" alt="lock_icon" class="icons">
+                    <input type="password" id="passwordC" name="confirm_password" placeholder=" " required>
+                    <img src="../img/invisible.png" alt="password_visibility" title="Show/Hide Password" class="password_icon"
+                        id="passwordC_visibility">
+                    <label for="confirm">Confirm Password</label>
+                </div>
+
+                <div class="sub_checkbox">
+                    <div>
+                        <input type="radio" id="free-sub" name="subscription" value="0" checked>
+                        <label for="Free Subscription">Free plan</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="premium-sub" name="subscription">
+                        <label for="Premium Subscription">Premium plan</label>
+                    </div>
+                </div>
+
+                <div class="env_bottons">
+                    <a href="/index.html" id="btn-back" style="color: white;">Back Login</a>
+                    <button type="submit" id="btn-submit">
+                        Sign Up
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="/scripts/scriptRegister.js"></script>
+</body>
+</html>
