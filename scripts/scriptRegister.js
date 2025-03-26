@@ -4,12 +4,12 @@ const signUpInput = document.getElementById('btn-submit')
 const iconPasswordVisibility = document.getElementById('password_visibility')
 const iconConfirmPasswordVisibility = document.getElementById('passwordC_visibility')
 
-const postRegisterUser = async () => {
+const postRegisterUser = async (event) => {
 	event.preventDefault()
 
 	const email = document.getElementById('email').value
 	const nome = document.getElementById('username').value
-	const senha = document.getElementById('password').value
+	const senha = document.getElementById('password').valuek
 	const confirm_password = document.getElementById('passwordC').value
 	const premium = document.getElementById('premium-sub').checked ? '1' : '0'
 
