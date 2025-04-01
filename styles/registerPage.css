@@ -43,7 +43,6 @@ main {
 		border-radius: 30px;
 		width: 40%;
 		height: 83vh;
-		gap: 30px;
 
 		& h1 {
 			font-family: 'Lilita One', sans-serif;
@@ -63,7 +62,7 @@ main {
 				font-style: italic;
 				color: #df1e1e;
 				position: relative;
-				top: 30px;
+				top: 10px;
 				left: 15px;
 			}
 		}
@@ -130,7 +129,7 @@ main {
 			display: flex;
 			flex-direction: column;
 			margin: 15px;
-			gap: 30px;
+			gap: 23px;
 			width: 80%;
 
 			.input {

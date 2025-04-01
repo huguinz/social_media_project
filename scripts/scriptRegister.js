@@ -11,12 +11,13 @@ const postRegisterUser = async (event) => {
 	const nome = document.getElementById('username').value
 	const senha = document.getElementById('password').value
 	const confirm_password = document.getElementById('passwordC').value
+	const recovery_password = document.getElementById('recovery_password').value
 	const premium = document.getElementById('premium-sub').checked ? '1' : '0'
 
 	const errorMessage = document.getElementById('error_register_message')
 	errorMessage.innerHTML = ''
 
-	if (email === '' || nome === '' || senha === '' || confirm_password === '') {
+	if (email === '' || nome === '' || senha === '' || confirm_password === '' || recovery_password === '') {
 		errorMessage.innerHTML = '<p> * It is mandatory to fill in all fields! </p>'
 		return
 	}
@@ -37,7 +38,7 @@ const postRegisterUser = async (event) => {
 		senha: senha,
 		premium: premium,
 		imagemPerfil: 'https://example.com/default-profile.jpg',
-		senhaRecuperacao: 'example123'
+		senhaRecuperacao: recovery_password
 	}
 
 	const response = await fetch('https://back-spider.vercel.app/user/cadastrarUser', {
