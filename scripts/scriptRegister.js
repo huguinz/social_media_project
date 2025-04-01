@@ -9,7 +9,7 @@ const postRegisterUser = async (event) => {
 
 	const email = document.getElementById('email').value
 	const nome = document.getElementById('username').value
-	const senha = document.getElementById('password').valuek
+	const senha = document.getElementById('password').value
 	const confirm_password = document.getElementById('passwordC').value
 	const premium = document.getElementById('premium-sub').checked ? '1' : '0'
 
@@ -51,7 +51,9 @@ const postRegisterUser = async (event) => {
 	if (response.ok) {
 		console.log(response)
 		alert('user registered successfully!!')
-		window.location.href = '#'
+		window.location.href = '/index.html'
+	} else if (response.status == 404) {
+		alert('this email already exists!!')
 	} else {
 		alert('register error!!')
 	}
