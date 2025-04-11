@@ -32,10 +32,11 @@ const postRecoveryUser = async (event) => {
 	const response = await fetch(url, options)
 
 	if (response.status == 200) {
-		alert('Now change a new password!')
+		alert('Now set a new password!')
 		const divEmail = document.getElementById('input_email')
 		const divPassword = document.getElementById('input_password')
 		const submitButton = document.getElementById('submit_button')
+		const data = await response.json()
 
 		divEmail.innerHTML = ` 
 								<img src="/src/img/padlock.png" alt="lock_icon" class="icons">
@@ -54,10 +55,11 @@ const postRecoveryUser = async (event) => {
 									<button id="submit-new-password">
 										Enter
 									</button>
-							`
+									`
+		sessionStorage.setItem('idUser', JSON.stringify(data.id))
+
 		const setPassword = document.getElementById('submit-new-password')
 		setPassword.addEventListener('click', createSetPasswordFields)
-		console.log(await response.json())
 	} else {
 		errorMessage.innerHTML = '<p> * Invalid e-mail or password key! </p>'
 		console.log(response)
@@ -71,6 +73,7 @@ const createSetPasswordFields = async (event) => {
 
 	const inputPassword = document.getElementById('input_password').value
 	const inputConfirmPassword = document.getElementById('input_passwordC').value
+	const idUserForUpdatePassword = sessionStorage.getItem('idUser')
 
 	if (inputPassword === '' || inputConfirmPassword === '') {
 		errorMessage.innerHTML = '<p> * It is mandatory to fill in all fields! </p>'
@@ -82,8 +85,34 @@ const createSetPasswordFields = async (event) => {
 		errorMessage.innerHTML = '<p> * Passwords do not match! </p>'
 		return
 	} else {
-		return
+		return await setNewPassword(idUserForUpdatePassword)
 	}
 }
 
-const setNewPassword = async (id) => {}
+const setNewPassword = async (id) => {
+	const inputPassword = document.getElementById('input_password').value
+	const url = `https://back-spider.vercel.app/user/newPassword/${id}`
+
+	const body = {
+		senha: inputPassword
+	}
+
+	const options = {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(body)
+	}
+
+	const response = await fetch(url, options)
+	console.log(response)
+
+	if (response.status === 200) {
+		alert('password changed successfully!')
+		location.href = '/index.html'
+	} else {
+		alert('unable to change password for unknown reasons!')
+		location.reload()
+	}
+}
