@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@200..900&family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+
+:root {
+	--inconsolata-font: 'Inconsolata', monospace;
+	--default-color: #f4960b;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	height: 100dvh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+header {
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+	border-bottom: 2px solid black;
+
+	button {
+		width: 50px;
+		height: 50px;
+	}
+
+	& img {
+		width: max(9vw, 100px);
+	}
+}
+
+footer {
+	border-top: 2px solid black;
+}
