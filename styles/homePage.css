@@ -5,6 +5,7 @@
 :root {
 	--inconsolata-font: 'Inconsolata', monospace;
 	--default-color: #f4960b;
+	--secondary-color: #38498b;
 }
 
 * {
@@ -25,19 +26,81 @@ body {
 header {
 	display: flex;
 	justify-content: space-around;
+	align-items: center;
 	padding: 20px;
-	border-bottom: 2px solid black;
+	position: relative;
 
-	button {
-		width: 50px;
-		height: 50px;
+	#search_bar {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		& button {
+			background-color: var(--secondary-color);
+			color: white;
+			width: max(5vw, 50px);
+			height: max(5vw, 50px);
+			border-radius: 50%;
+			border: none;
+			font-size: calc(min(5vw, 100px) * 0.7);
+			transition: ease-in 0.2s;
+			position: relative;
+
+			&:hover {
+				transform: scale(1.1);
+				cursor: pointer;
+			}
+		}
+		#search {
+			border-radius: 5rem;
+			padding: 10px;
+			padding-left: 5%;
+			background-color: #80808030;
+			border: none;
+			outline-color: black;
+			width: 30vw;
+			height: max(3vw, 50px);
+			font-size: clamp(1rem, 1.5vw, 6rem);
+		}
 	}
 
 	& img {
-		width: max(9vw, 100px);
+		width: max(10vw, 100px);
+		height: max(5vw, 60px);
 	}
 }
 
 footer {
-	border-top: 2px solid black;
+	padding: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: var(--default-color);
+
+	& img:nth-child(1) {
+		width: max(6.5vw, 3.5rem);
+		height: max(3.5vw, 2rem);
+		cursor: pointer;
+	}
+
+	& img:nth-child(2) {
+		width: max(2.8vw, 2rem);
+		height: max(2.8vw, 2rem);
+		cursor: pointer;
+	}
+
+	& img:nth-child(3) {
+		width: max(5.5vw, 3.5rem);
+		height: max(3.5vw, 2.4rem);
+		cursor: pointer;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.2);
+	}
 }
