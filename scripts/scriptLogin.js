@@ -35,11 +35,12 @@ const postLoginUser = async (event) => {
 
 	if (response.status == 200) {
 		alert('login successfully!')
-		console.log(response)
-		window.location.href = '#'
+		const data = await response.json()
+
+		localStorage.setItem('idUser', JSON.stringify(data.user.id))
+		window.location.href = '/src/pages/homePage.html'
 	} else {
 		errorMessage.innerHTML = '<p> * Invalid e-mail or password! </p>'
-		console.log(response)
 	}
 }
 
