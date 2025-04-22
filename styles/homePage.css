@@ -68,28 +68,29 @@ header {
 
 		img {
 			position: absolute;
-			left: max(21%, 140px);
+			left: max(21.4%, 140px);
 			height: calc(max(3vw, 50px) * 0.4);
 			width: 0.8vw;
-			min-height: 20px;
+			min-height: 25px;
 			min-width: 23px;
 		}
 	}
 
 	& img {
-		width: max(10vw, 100px);
-		height: max(5vw, 60px);
+		width: max(8vw, 100px);
+		height: max(4vw, 60px);
 	}
 }
 
 main {
 	margin-top: 20px;
 
-	& article {
+	& section {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 1.5rem;
+		padding-bottom: calc(max(3.8vw, 2.4rem) * 1.3);
 
 		& #container_img {
 			border: 1px solid #0000007d;
@@ -97,14 +98,13 @@ main {
 			box-shadow: 1px 1px 10px #00000054;
 			background-color: whitesmoke;
 			display: flex;
-			padding: 0 2rem;
-			padding-top: max(2%, 2rem);
+			padding: 0 1rem;
+			padding-top: 1%;
 			padding-bottom: max(1.2%, 1.2rem);
 			flex-direction: column;
 			justify-content: space-between;
-			align-items: center;
 			width: 650px;
-			height: 600px;
+			height: 650px;
 
 			& #images_publications {
 				max-height: 400px;
@@ -129,6 +129,20 @@ main {
 				& .like_fill {
 					transition: 0.2s ease;
 					transform: scale(1.1);
+				}
+			}
+
+			& #description_publication {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				padding: 0 1rem;
+
+				& #profile_image {
+					width: 70px;
+					height: 70px;
+					border-radius: 50%;
+					border: 2px solid var(--secondary-color);
 				}
 			}
 		}
