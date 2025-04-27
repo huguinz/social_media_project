@@ -11,19 +11,28 @@
 <body>
     <header>
         <div class="container">
+            <button id="sign_out">Sign out</button>
             <button id="new_publication">+</button>
             <input type="text" id="search" placeholder="What are you looking for?"></input>
             <img src="/src/img/search_icon.png" alt="search_icon">
         </div>
         <img src="../img/logo-loop.png" alt="Loop logo">
-        <!-- <aside>
-            <form method="post">
-                <input type="text" required>
-                <input type="text" placeholder="Description">
-                <input type="text" placeholder="Location">
-            </form>
-        </aside> -->
     </header>
+
+    <article>
+        <div id="container_form">
+            <form method="post" autocomplete="off">
+                <input type="text" id="url_image" placeholder="URL image" required>
+                <input type="text" id="description" placeholder="Description" maxlength="80" required>
+                <input type="text" id="location" placeholder="Location" required>
+            </form>
+            <p>0</p>
+            <div id="buttons">
+                <button id="close_tab">Close</button>
+                <button id="submit_publication" onclick="postPublication()">Publish</button>
+            </div>
+        </div>
+    </article>
 
     <main>
         <section id="publications"></section>
