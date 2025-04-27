@@ -37,7 +37,8 @@ const postRegisterUser = async (event) => {
 		email: email,
 		senha: senha,
 		premium: premium,
-		imagemPerfil: 'https://example.com/default-profile.jpg',
+		imagemPerfil:
+			'https://img.freepik.com/vetores-gratis/vetor-alienigena-usando-chapeu-de-balde_43623-972.jpg?t=st=1745707141~exp=1745710741~hmac=2499ffa357b7103176691d90be52cecf199b873078ca26574ba57fd2631944f0&w=740',
 		senhaRecuperacao: recovery_password
 	}
 
@@ -50,7 +51,6 @@ const postRegisterUser = async (event) => {
 	})
 
 	if (response.ok) {
-		console.log(response)
 		alert('user registered successfully!!')
 		window.location.href = '/index.html'
 	} else if (response.status == 404) {
