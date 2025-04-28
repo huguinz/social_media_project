@@ -30,7 +30,7 @@ header {
 	padding: 20px;
 	position: relative;
 
-	.container {
+	& .container {
 		display: flex;
 		align-items: center;
 		gap: 20px;
@@ -71,7 +71,7 @@ header {
 			}
 		}
 
-		#search {
+		& #search {
 			border-radius: 5rem;
 			padding: 10px;
 			padding-left: 10%;
@@ -85,7 +85,7 @@ header {
 			position: relative;
 		}
 
-		img {
+		& #search_icon {
 			position: absolute;
 			left: max(21.4%, 140px);
 			height: calc(max(3vw, 50px) * 0.4);
@@ -95,7 +95,7 @@ header {
 		}
 	}
 
-	& img {
+	& #loop_logo {
 		width: max(8vw, 100px);
 		height: max(4vw, 60px);
 	}
@@ -354,8 +354,8 @@ footer {
 
 	& img {
 		&:nth-child(1) {
-			width: max(6.5vw, 3.5rem);
-			height: max(3.5vw, 2rem);
+			width: max(3.5vw, 3rem);
+			height: max(3.2vw, 1.7rem);
 		}
 
 		&:nth-child(2) {
@@ -364,7 +364,7 @@ footer {
 		}
 
 		&:nth-child(3) {
-			width: max(5.5vw, 3.5rem);
+			width: max(4.5vw, 2.5rem);
 			height: max(3.8vw, 2.4rem);
 		}
 

@@ -2,10 +2,7 @@
 
 const newPublicationButton = document.getElementById('new_publication')
 const signOut = document.getElementById('sign_out')
-signOut.addEventListener('click', () => {
-	localStorage.removeItem('idUser')
-	window.location.href = '/index.html'
-})
+const profileIcon = document.getElementById('profile_icon')
 
 const getAllPublications = async () => {
 	const publications = document.getElementById('publications')
@@ -51,10 +48,13 @@ const getAllPublications = async () => {
 			images.id = 'images_publications'
 			like.src = '/src/img/outline_like.png'
 			like.id = 'like'
+			like.title = 'Like'
 			comment.src = '/src/img/comment.png'
 			comment.id = 'comment'
+			comment.title = 'Comment'
 			share.src = '/src/img/share.png'
 			share.id = 'share'
+			share.title = 'Share'
 
 			publications.appendChild(containerImg)
 			descriptionPublication.appendChild(profileImage)
@@ -223,5 +223,20 @@ const newPublicationData = () => {
 }
 
 newPublicationButton.addEventListener('click', newPublicationData)
+
+signOut.addEventListener('click', () => {
+	localStorage.removeItem('idUser')
+	window.location.href = '/index.html'
+})
+
+profileIcon.addEventListener('mouseover', () => {
+	profileIcon.src = '/src/img/profile_filled.png'
+})
+profileIcon.addEventListener('mouseleave', () => {
+	profileIcon.src = '/src/img/profile_outlined.png'
+})
+profileIcon.addEventListener('click', () => {
+	location.href = '/src/pages/profilePage.html'
+})
 
 getAllPublications()
