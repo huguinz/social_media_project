@@ -98,6 +98,7 @@ const getAllPublications = async () => {
 
 			like.addEventListener('click', () => {
 				const getDataSet = containerImg.dataset.idPublication
+				console.log(getDataSet)
 				like.src = '/src/img/fill_like.png'
 				like.classList.add('like_fill')
 				putLikeUser(getDataSet)
@@ -105,6 +106,17 @@ const getAllPublications = async () => {
 				setTimeout(() => {
 					like.classList.remove('like_fill')
 				}, 200)
+			})
+
+			comment.addEventListener('click', () => {
+				const getDataSetIdPublication = containerImg.dataset.idPublication
+				const idUserPublication = item.idUsuario
+
+				if (getDataSetIdPublication) {
+					sessionStorage.setItem('idPublication', getDataSetIdPublication)
+					sessionStorage.setItem('idUserPublication', idUserPublication)
+					location.href = '/src/pages/commentsPage.html'
+				}
 			})
 		})
 	}
@@ -125,7 +137,10 @@ const putLikeUser = async (id) => {
 		},
 		body: JSON.stringify(body)
 	}
-	await fetch(url, options)
+	const response = await fetch(url, options)
+	const data = await response.json()
+
+	return data
 }
 
 const getUserById = async (id) => {
@@ -180,7 +195,7 @@ const deletePublication = async (id) => {
 
 	const response = await fetch(url, options)
 
-	if (response.status === 200) {
+	if (response.status === 204) {
 		alert('publication deleted successfully!')
 	}
 }
