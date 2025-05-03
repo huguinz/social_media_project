@@ -122,11 +122,14 @@ main {
 			& section#my_comments {
 				display: flex;
 				flex-direction: column;
+				gap: 1rem;
 				justify-content: center;
 				align-items: center;
 				background-color: whitesmoke;
 				height: 100%;
 				overflow-y: auto;
+				padding-bottom: 80px;
+				padding-top: 100px;
 
 				& input#post_comment {
 					position: fixed;
@@ -149,25 +152,35 @@ main {
 					color: #615e5e96;
 				}
 
-				& img#my_image {
-					width: 4vw;
-					height: 4vw;
-					border-radius: 50%;
-					border: 2px solid var(--secondary-color);
-				}
-
-				& div#my_info {
+				& article.my_single_comment {
 					display: flex;
-					flex-direction: column;
-					gap: 0.5rem;
-					max-width: 90%;
+					background-color: rgb(241, 222, 222);
+					padding: 10px;
+					border-radius: 1rem;
+					box-shadow: 1px 1px 7px #0000005b;
+					max-width: 50%;
 
-					& h1 {
-						font-size: clamp(1.3rem, calc(1vw + 0.5rem), 2rem);
+					& img#my_image {
+						width: 4vw;
+						height: 4vw;
+						border-radius: 50%;
+						border: 2px solid var(--secondary-color);
+						margin-right: 10px;
 					}
 
-					& p {
-						font-size: clamp(1.1rem, calc(1vw + 0.3rem), 1.8rem);
+					& div#my_info {
+						display: flex;
+						flex-direction: column;
+						gap: 0.3rem;
+						max-width: 50%;
+
+						& h1 {
+							font-size: clamp(1.3rem, calc(1vw + 0.5rem), 2rem);
+						}
+
+						& p {
+							font-size: clamp(1.1rem, calc(1vw + 0.3rem), 1.8rem);
+						}
 					}
 				}
 			}
